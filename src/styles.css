@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #008778;
+  --primaryLightest: "#E6F3F2";
+  --heading: "#161F1E";
+  --bodyCopy: "#303A39";
+  --subtleText: "#5D6867";
+  --subtleText2: "#86908F";
+  --formFields: "#B6BFBE";
+  --hairlines: "#D5DEDD";
+  --hairlines2: "#E6EBEA";
+  --bgColor: "#F7F7F7";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* custom icons into fonts */
+@font-face {
+  font-family: "resource-management-app";
+  src: url("/assets/fonts/resource-management-app.eot?lysj69");
+  src: url("/assets/fonts/resource-management-app.eot?lysj69#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/resource-management-app.ttf?lysj69") format("truetype"),
+    url("/assets/fonts/resource-management-app.woff?lysj69") format("woff"),
+    url("/assets/fonts/resource-management-app.svg?lysj69#resource-management-app")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "resource-management-app" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e906";
+}
+.icon-reload-outline:before {
+  content: "\e907";
+}
+.icon-chevron:before {
+  content: "\e900";
+}
+.icon-download-outline:before {
+  content: "\e902";
+}
+.icon-upload-outline:before {
+  content: "\e901";
+}
+.icon-pdf-outline:before {
+  content: "\e903";
+}
+.icon-zip-outline:before {
+  content: "\e904";
+}
+.icon-image-outline:before {
+  content: "\e905";
+}
+
+.nav-item {
+  position: relative;
+  display: block;
+  font-size: 1rem;
+  transition: all ease 0.1s;
+}
+.nav-item:hover {
+  font-weight: bold;
+}
+
+.nav-item-active {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.nav-item-active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: 0;
+  border: 1px solid var(--primary);
+  border-radius: 0px 8px 8px 0px;
+  transition: all ease-out 0.2s;
+}
+
+.nav-item-active::before {
+  opacity: 1;
+}
+
+form > label {
+  font-weight: 500;
+  color: var(--bodyCopy);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline-color: var(--primary);
+}
